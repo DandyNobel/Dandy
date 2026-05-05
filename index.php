@@ -4,980 +4,542 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Craftivo Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+
+  <title>Dashboard - InvAdmin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Craftivo
-  * Template URL: https://bootstrapmade.com/craftivo-bootstrap-portfolio-template/
-  * Updated: Oct 04 2025 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Craftivo</h1>
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.php" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">InvAdmin</span>
       </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.php">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="kategori_produk.php">
+          <i class="bi bi-tags"></i>
+          <span>Kategori Produk</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="produk.php">
+          <i class="bi bi-box-seam"></i>
+          <span>Data Produk</span>
+        </a>
+      </li><!-- End Data Produk Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="laporan.php">
+          <i class="bi bi-bar-chart-line"></i>
+          <span>Laporan</span>
+        </a>
+      </li><!-- End Laporan Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users.php">
+          <i class="bi bi-people"></i>
+          <span>Manajemen User</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
       </nav>
+    </div><!-- End Page Title -->
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+    <section class="section dashboard">
+      <div class="row">
 
-    </div>
-  </header>
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="row">
 
-  <main class="main">
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
-      <img src="assets/img/profile/profile-bg-5.webp" alt="" data-aos="fade-in">
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2>Hi, I'm Alex Morgan</h2>
-            <p>I'm a <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span><span class="typed-cursor" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
+                <div class="card-body">
+                  <h5 class="card-title">Sales <span>| Today</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            <!-- Reports -->
+            <div class="col-12">
+              <div class="card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+                        series: [{
+                          name: 'Sales',
+                          data: [31, 40, 28, 51, 42, 82, 56],
+                        }, {
+                          name: 'Revenue',
+                          data: [11, 32, 45, 32, 34, 52, 41]
+                        }, {
+                          name: 'Customers',
+                          data: [15, 11, 32, 18, 9, 24, 11]
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+
+                </div>
+
+              </div>
+            </div><!-- End Reports -->
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Brandon Jacob</td>
+                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td>$64</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Bridie Kessler</td>
+                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>$47</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>$147</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Angus Grady</td>
+                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>$67</td>
+                        <td><span class="badge bg-danger">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Raheem Lehner</td>
+                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>$165</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
           </div>
-        </div>
-      </div>
+        </div><!-- End Left side columns -->
 
-    </section><!-- /Hero Section -->
+        <!-- Right side columns -->
+        <div class="col-lg-4">
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">About Me</span>
-        <h2>About Me</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="150">
-            <div class="profile-card">
-              <div class="profile-header">
-                <div class="profile-avatar">
-                  <img src="assets/img/profile/profile-square-3.webp" class="img-fluid" alt="">
-                  <div class="status-indicator"></div>
-                </div>
-                <h3>Jordan Mitchell</h3>
-                <span class="role">Full Stack Developer</span>
-                <div class="rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-half"></i>
-                  <span>4.8</span>
-                </div>
-              </div>
-
-              <div class="profile-stats">
-                <div class="stat-item">
-                  <h4>156</h4>
-                  <p>Projects</p>
-                </div>
-                <div class="stat-item">
-                  <h4>8+</h4>
-                  <p>Years</p>
-                </div>
-                <div class="stat-item">
-                  <h4>42</h4>
-                  <p>Awards</p>
-                </div>
-              </div>
-
-              <div class="profile-actions">
-                <a href="#" class="btn-primary"><i class="bi bi-download"></i> Download CV</a>
-                <a href="#" class="btn-secondary"><i class="bi bi-envelope"></i> Contact</a>
-              </div>
-
-              <div class="social-connect">
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-                <a href="#"><i class="bi bi-github"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-              </div>
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
             </div>
-          </div>
 
-          <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
-            <div class="content-wrapper">
-              <div class="bio-section">
-                <div class="section-tag">About Me</div>
-                <h2>Transforming Ideas into Digital Reality</h2>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+              <div class="activity">
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">32 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content">
+                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">56 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptatem blanditiis blanditiis eveniet
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 hrs</div>
+                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptates corrupti molestias voluptatem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">1 day</div>
+                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                  <div class="activity-content">
+                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 days</div>
+                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                  <div class="activity-content">
+                    Est sit eum reiciendis exercitationem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">4 weeks</div>
+                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                  <div class="activity-content">
+                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                  </div>
+                </div><!-- End activity item-->
+
               </div>
 
-              <div class="details-grid">
-                <div class="detail-item" data-aos="fade-up" data-aos-delay="250">
-                  <i class="bi bi-briefcase"></i>
-                  <div class="detail-content">
-                    <span>Experience</span>
-                    <strong>8+ Years</strong>
-                  </div>
-                </div>
-
-                <div class="detail-item" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bi bi-mortarboard"></i>
-                  <div class="detail-content">
-                    <span>Degree</span>
-                    <strong>Master of Science</strong>
-                  </div>
-                </div>
-
-                <div class="detail-item" data-aos="fade-up" data-aos-delay="350">
-                  <i class="bi bi-geo-alt"></i>
-                  <div class="detail-content">
-                    <span>Based In</span>
-                    <strong>Portland, OR</strong>
-                  </div>
-                </div>
-
-                <div class="detail-item" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bi bi-envelope"></i>
-                  <div class="detail-content">
-                    <span>Email</span>
-                    <strong>contact@example.com</strong>
-                  </div>
-                </div>
-
-                <div class="detail-item" data-aos="fade-up" data-aos-delay="150">
-                  <i class="bi bi-phone"></i>
-                  <div class="detail-content">
-                    <span>Phone</span>
-                    <strong>+1 (555) 234-5678</strong>
-                  </div>
-                </div>
-
-                <div class="detail-item" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-calendar-check"></i>
-                  <div class="detail-content">
-                    <span>Availability</span>
-                    <strong>Open to Work</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skills-showcase" data-aos="fade-up" data-aos-delay="250">
-                <div class="section-tag">Core Skills</div>
-                <h3>Technical Proficiency</h3>
-
-                <div class="skills-list skills-animation">
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">React &amp; Next.js</span>
-                      <span class="skill-percent">95%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Node.js &amp; Express</span>
-                      <span class="skill-percent">90%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">UI/UX &amp; Figma</span>
-                      <span class="skill-percent">88%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">MongoDB &amp; PostgreSQL</span>
-                      <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
-                  <div class="skill-item">
-                    <div class="skill-info">
-                      <span class="skill-name">Docker &amp; AWS</span>
-                      <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Resume</span>
-        <h2>Resume</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-          <div class="col-lg-6">
-            <div class="experience-section">
-              <div class="section-header" data-aos="fade-right" data-aos-delay="200">
-                <div class="header-content">
-                  <span class="section-badge">Experience</span>
-                  <h2>Professional Journey</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-
-              <div class="experience-cards">
-                <div class="exp-card featured" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="card-header">
-                    <div class="company-logo">
-                      <i class="bi bi-buildings"></i>
-                    </div>
-                    <div class="period-badge">Current</div>
-                  </div>
-                  <div class="card-body">
-                    <h3>Senior Creative Director</h3>
-                    <p class="company-name">Digital Innovation Labs</p>
-                    <span class="duration">2023 - Present</span>
-                    <p class="description">Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</p>
-                    <div class="skills-tags">
-                      <span class="skill-tag">Leadership</span>
-                      <span class="skill-tag">Strategy</span>
-                      <span class="skill-tag">Innovation</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="exp-card" data-aos="zoom-in" data-aos-delay="350">
-                  <div class="card-header">
-                    <div class="company-logo">
-                      <i class="bi bi-laptop"></i>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h3>Product Design Lead</h3>
-                    <p class="company-name">TechForward Solutions</p>
-                    <span class="duration">2020 - 2023</span>
-                    <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.</p>
-                  </div>
-                </div>
-
-                <div class="exp-card" data-aos="zoom-in" data-aos-delay="400">
-                  <div class="card-header">
-                    <div class="company-logo">
-                      <i class="bi bi-palette"></i>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h3>UX Designer</h3>
-                    <p class="company-name">Creative Studio Inc</p>
-                    <span class="duration">2017 - 2020</span>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="education-section">
-              <div class="section-header" data-aos="fade-left" data-aos-delay="200">
-                <div class="header-content">
-                  <span class="section-badge">Education</span>
-                  <h2>Academic Background</h2>
-                  <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
-                </div>
-              </div>
-
-              <div class="education-timeline" data-aos="fade-left" data-aos-delay="300">
-                <div class="timeline-track">
-                  <div class="timeline-item">
-                    <div class="timeline-marker">
-                      <i class="bi bi-mortarboard-fill"></i>
-                    </div>
-                    <div class="timeline-content">
-                      <div class="education-meta">
-                        <span class="year-range">2015 - 2017</span>
-                        <span class="degree-level">Masters</span>
-                      </div>
-                      <h4>Master of Design Innovation</h4>
-                      <p class="institution">Institute of Creative Arts</p>
-                      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
-                      <div class="achievement">
-                        <i class="bi bi-award"></i>
-                        <span>Summa Cum Laude</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="timeline-marker">
-                      <i class="bi bi-book"></i>
-                    </div>
-                    <div class="timeline-content">
-                      <div class="education-meta">
-                        <span class="year-range">2011 - 2015</span>
-                        <span class="degree-level">Bachelor</span>
-                      </div>
-                      <h4>Bachelor of Fine Arts</h4>
-                      <p class="institution">Creative Arts University</p>
-                      <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                  </div>
-
-                  <div class="timeline-item">
-                    <div class="timeline-marker">
-                      <i class="bi bi-patch-check-fill"></i>
-                    </div>
-                    <div class="timeline-content">
-                      <div class="education-meta">
-                        <span class="year-range">2016 - 2023</span>
-                        <span class="degree-level">Certificates</span>
-                      </div>
-                      <h4>Professional Certifications</h4>
-                      <div class="certifications-list">
-                        <div class="cert-item">
-                          <span class="cert-name">Advanced UX Research</span>
-                          <span class="cert-year">2023</span>
-                        </div>
-                        <div class="cert-item">
-                          <span class="cert-name">Design Leadership</span>
-                          <span class="cert-year">2022</span>
-                        </div>
-                        <div class="cert-item">
-                          <span class="cert-name">Digital Strategy</span>
-                          <span class="cert-year">2021</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </div><!-- End Recent Activity -->
+        </div><!-- End Right side columns -->
 
       </div>
+    </section>
 
-    </section><!-- /Resume Section -->
+  </main><!-- End #main -->
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Services</span>
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-palette"></i>
-              </div>
-              <h4>Brand Identity</h4>
-              <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus vivamus magna.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item featured">
-              <div class="featured-tag">Featured</div>
-              <div class="icon-wrapper">
-                <i class="bi bi-layout-text-window-reverse"></i>
-              </div>
-              <h4>UI/UX Design</h4>
-              <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui donec rutrum.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <h4>Development</h4>
-              <p>Praesent sapien massa convallis a pellentesque nec egestas non nisi cras ornare arcu.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-phone"></i>
-              </div>
-              <h4>Mobile Apps</h4>
-              <p>Vivamus suscipit tortor eget felis porttitor volutpat quisque velit nisi pretium ut lacinia.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <h4>Digital Marketing</h4>
-              <p>Nulla porttitor accumsan tincidunt curabitur aliquet quam id dui posuere blandit mauris.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-search"></i>
-              </div>
-              <h4>SEO Services</h4>
-              <p>Pellentesque in ipsum id orci porta dapibus donec sollicitudin molestie malesuada proin.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <h4>Analytics</h4>
-              <p>Sed porttitor lectus nibh curabitur arcu erat accumsan id imperdiet et porttitor at sem.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h4>Security</h4>
-              <p>Vivamus magna justo lacinia eget consectetur sed convallis at tellus mauris blandit aliquet.</p>
-              <a href="service-details.html" class="read-more">
-                <span>Explore</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-            <div class="cta-box">
-              <div class="row align-items-center">
-                <div class="col-lg-8">
-                  <h3>Transform Your Vision Into Reality</h3>
-                  <p>Partner with us to bring your ideas to life with innovative solutions tailored to your needs</p>
-                </div>
-                <div class="col-lg-4 text-lg-end text-center">
-                  <a href="service-details.html" class="cta-btn">Start Your Project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Portfolio</span>
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-            <li data-filter="*" class="filter-active">All Work</li>
-            <li data-filter=".filter-creative">Creative</li>
-            <li data-filter=".filter-digital">Digital</li>
-            <li data-filter=".filter-strategy">Strategy</li>
-            <li data-filter=".filter-development">Development</li>
-          </ul>
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-1.webp" alt="Creative Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Creative Design</span>
-                      <h4>Visual Identity System</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Branding</span>
-                    <span class="tag">Identity</span>
-                  </div>
-                  <div class="project-year">2024</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-2.webp" alt="Digital Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Digital Experience</span>
-                      <h4>Interactive Web Platform</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-2.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Web Design</span>
-                    <span class="tag">Development</span>
-                  </div>
-                  <div class="project-year">2024</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-strategy">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-3.webp" alt="Strategy Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Brand Strategy</span>
-                      <h4>Market Positioning</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-3.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Strategy</span>
-                    <span class="tag">Consulting</span>
-                  </div>
-                  <div class="project-year">2023</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-4.webp" alt="Development Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Full Stack</span>
-                      <h4>Custom Application</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-4.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">React</span>
-                    <span class="tag">Node.js</span>
-                  </div>
-                  <div class="project-year">2024</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-creative">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-5.webp" alt="Creative Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Art Direction</span>
-                      <h4>Campaign Design</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-5.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Creative</span>
-                    <span class="tag">Campaign</span>
-                  </div>
-                  <div class="project-year">2024</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-digital">
-              <div class="portfolio-card">
-                <div class="portfolio-image-container">
-                  <img src="assets/img/portfolio/portfolio-6.webp" alt="Digital Project" class="img-fluid" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-info">
-                      <span class="project-category">Digital Product</span>
-                      <h4>Mobile Experience</h4>
-                    </div>
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-6.webp" class="glightbox portfolio-link">
-                        <i class="bi bi-plus-lg"></i>
-                      </a>
-                      <a href="#" class="portfolio-details">
-                        <i class="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-meta">
-                  <div class="project-tags">
-                    <span class="tag">Mobile</span>
-                    <span class="tag">UI/UX</span>
-                  </div>
-                  <div class="project-year">2023</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="portfolio-bottom" data-aos="fade-up" data-aos-delay="400">
-          <div class="row align-items-center">
-            <div class="col-lg-8">
-              <h3>Like what you see?</h3>
-              <p>Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-              <a href="#contact" class="btn btn-accent">Let's Work Together</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Contact</span>
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-geo-alt"></i>
-              </div>
-              <div>
-                <h3>Address</h3>
-                <p>2847 Oak Street, San Francisco, CA 94102</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-telephone"></i>
-              </div>
-              <div>
-                <h3>Call Me</h3>
-                <p>+1 (555) 234-5678</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <div class="icon-wrapper">
-                <i class="bi bi-envelope"></i>
-              </div>
-              <div>
-                <h3>Email Me</h3>
-                <p>alex@example.com</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
+  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Craftivo</span>
-          </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
-        </div>
-
-      </div>
+    <div class="copyright">
+      &copy; Copyright <strong><span>InvAdmin</span></strong>. All Rights Reserved
     </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Craftivo</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
-      </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
+  </footer><!-- End Footer -->
 
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
+  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
