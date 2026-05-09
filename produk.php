@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +29,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -93,7 +95,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="login.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -160,63 +162,80 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body mt-3">
+              <a href="t_produk.php" class="btn btn-primary">Tambah Data</a>
+              <a href="stok.php" class="btn btn-primary">Stok</a>
+            </div>
+          </div>
+        </div>
+      </div>
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
 
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
-              <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
-
+            <div class="card-body mt-3">
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Start Date</th>
+                    <th scope="col">No</th>
+                    <th scope="col">Kode Produk</th>
+                    <th scope="col">Nama Produk</th>
+                    <th scope="col">Kategori</th>
+                    <th scope="col">stok</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Gambar</th>
+                    <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
+                <?php
+$query = mysqli_query($conn, "
+SELECT products.*, categories.nm_kat
+FROM products
+JOIN categories ON products.category_id = categories.category_id
+");
+
+$no = 1;
+
+while($row = mysqli_fetch_array($query)) {
+?>
+
+<tr>
+
+    <td><?php echo $no++; ?></td>
+
+    <td><?php echo $row['product_Code']; ?></td>
+
+    <td><?php echo $row['product_name']; ?></td>
+
+    <td><?php echo $row['nm_kat']; ?></td>
+
+    <td><?php echo $row['stock']; ?></td>
+
+    <td>Rp. <?php echo number_format($row['price']); ?></td>
+
+    <td>
+        <img src="produk_img/<?php echo $row['gambar']; ?>" width="80">
+    </td>
+
+    <td>
+        <a href="edit_produk.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">
+            Edit
+        </a>
+
+        <a href="hapus_produk.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">
+            Hapus
+        </a>
+    </td>
+
+</tr>
+
+<?php } ?>
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
@@ -233,14 +252,9 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
 
@@ -256,7 +270,6 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

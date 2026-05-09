@@ -26,7 +26,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -166,56 +165,54 @@
 
           <div class="card">
             <div class="card-body">
+
+  <h5 class="card-title">Data Kategori Produk</h5>
+
+  <a href="t_kat.php" class="btn btn-primary mb-3">
+    Tambah Data
+  </a>
               <h5 class="card-title">Datatables</h5>
-              <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
 
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Start Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
+  <tr>
+    <th scope="col">No</th>
+    <th scope="col">Kode Kategori</th>
+    <th scope="col">Kategori Produk</th>
+    <th scope="col">Aksi</th>
+  </tr>
+</thead>
+
+<tbody>
+<?php
+include "koneksi.php";
+
+$no = 1;
+
+$sql = mysqli_query($conn, "SELECT * FROM categories");
+
+while($data = mysqli_fetch_array($sql)){
+?>
+
+<tr>
+    <td><?php echo $no++; ?></td>
+    <td><?php echo $data['category_id']; ?></td>
+    <td><?php echo $data['nm_kat']; ?></td>
+    <td>
+        <a href="e_kat.php?id=<?php echo $data['id']; ?>" class="btn btn-warning btn-sm">
+            Edit
+        </a>
+
+        <a href="h_kat.php?id=<?php echo $data['id']; ?>" 
+        class="btn btn-danger btn-sm"
+        onclick="return confirm('Yakin ingin menghapus data?')">
+            Hapus
+        </a>
+    </td>
+</tr>
+
+<?php } ?>
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
@@ -235,11 +232,7 @@
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href>DandyInventory</a>
     </div>
   </footer><!-- End Footer -->
 
@@ -255,7 +248,6 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

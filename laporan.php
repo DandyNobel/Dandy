@@ -1,3 +1,22 @@
+<?php
+include 'koneksi.php';
+
+// total stok
+$q1 = mysqli_query($conn, "SELECT id FROM products");
+$total_item = $q1 ? mysqli_num_rows($q1) : 0;
+
+// total barang masuk
+$q2 = mysqli_query($conn, "SELECT id FROM Stock_logs WHERE change_type='ADD'");
+$total_barang_masuk = $q2 ? mysqli_num_rows($q2) : 0;
+
+// total barang keluar
+$q3 = mysqli_query($conn, "SELECT id FROM Stock_logs WHERE change_type='REDUCE'");
+$total_barang_keluar = $q3 ? mysqli_num_rows($q3) : 0;
+
+// stok kritis
+$q4 = mysqli_query($conn, "SELECT id FROM products WHERE Stock <= min_stock");
+$total_stok_kritis = $q4 ? mysqli_num_rows($q4) : 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +45,6 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -159,29 +177,59 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
+    <!-- Laporan Stok Barang -->
     <section class="section">
       <div class="row">
         <div class="col-lg-6">
-
-          <div class="card">
+          <div class="card shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+              <h5 class="card-title">Laporan Stok Barang</h5>
+              <p class="text-muted">Menampilkan seluruh data stok barang saat ini.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-primary">Total Item: <?= $total_item; ?></span>
+                <a href="laporan_stok.php" class="btn btn-sm btn-primary">Lihat Laporan</a>
+              </div>
             </div>
           </div>
-
         </div>
-
+        <!-- Laporan Barang Masuk -->
         <div class="col-lg-6">
-
-          <div class="card">
+          <div class="card shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+              <h5 class="card-title">Laporan Barang Masuk</h5>
+              <p class="text-muted">Riwayat barang yang masuk ke gudang.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-success">Total Transaksi: <?= $total_barang_masuk; ?></span>
+                <a href="laporan_barang_masuk.php" class="btn btn-sm btn-success">Lihat Laporan</a>
+              </div>
             </div>
           </div>
-
+        </div>
+        <!-- Laporan Barang Keluar -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Laporan Barang Keluar</h5>
+              <p class="text-muted">Riwayat barang yang keluar dari gudang.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger">Total Transaksi: <?= $total_barang_keluar; ?></span>
+                <a href="laporan_barang_keluar.php" class="btn btn-sm btn-danger">Lihat Laporan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Laporan Stok Minimum --> 
+        <div class="col-lg-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Stok Minimum</h5>
+              <p class="text-muted">Barang dengan stok hampir habis.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-warning">Item Kritis: <?= $total_stok_kritis; ?></span>
+                <a href="laporan_stok_minimum.php" class="btn btn-sm btn-warning" target="_blank">Lihat Laporan</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -191,14 +239,10 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <a href="#">DandyNobel</a>
     </div>
   </footer><!-- End Footer -->
 
@@ -214,7 +258,6 @@
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

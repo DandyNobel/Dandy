@@ -1,3 +1,22 @@
+<?php
+include "koneksi.php";
+$id = $_GET['id'];
+$sql = mysqli_query($conn, "SELECT * FROM categories WHERE id = '$id'");
+$hasil = mysqli_fetch_array($sql);
+if (isset($_POST['update'])) {
+
+    $nm_kat = $_POST['nm_kat'];
+
+    $query = mysqli_query($conn, "UPDATE categories SET category_name = '$nm_kat' WHERE id='$id'");
+    if ($query) {
+        echo "<script>alert('Data berhasil diubah!')</script>";
+        header("refresh:0, kategori_produk.php");
+    } else {
+        echo "<script>alert('Data gagal diubah!')</script>";
+        header("refresh:0, kategori_produk.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +24,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Stock - DandyInventory</title>
+  <title>Kategori Produk - DandyInventory</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,6 +64,7 @@
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown">
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
@@ -117,14 +137,14 @@
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="kategori_produk.php">
+        <a class="nav-link " href="kategori_produk.php">
           <i class="bi bi-tags"></i>
           <span>Kategori Produk</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="produk.php">
+        <a class="nav-link collapsed" href="produk.php">
           <i class="bi bi-box-seam"></i>
           <span>Data Produk</span>
         </a>
@@ -150,40 +170,50 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Stock Produk</h1>
+      <h1>Kategori Produk</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="produk.php">Produk</a></li>
-          <li class="breadcrumb-item active">Stock</li>
+          <li class="breadcrumb-item"><a href="kategori_produk.php">Kategori Produk</a></li>
+          <li class="breadcrumb-item active">Edit</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
     <section class="section">
-      <div class="row">
         <div class="col-lg-6">
-
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+              <h5 class="card-title">Edit Kategori Produk</h5>
+              <!-- Vertical Form -->
+              <form class="row g-3" method="post">
+                <div class="col-12">
+  <div class="col-12">
+  <label for="kd_kat" class="form-label">Kode Kategori</label>
+  <input type="text" class="form-control" id="kd_kat" 
+  name="kd_kat" 
+  value="<?php echo $hasil['category_id']; ?>" readonly>
+</div>
+
+<div class="col-12">
+  <label for="nm_kat" class="form-label">Nama Kategori</label>
+  
+  <input type="text" 
+  class="form-control" 
+  id="nm_kat" 
+  name="nm_kat" 
+  value="<?php echo $hasil['nm_kat']; ?>" 
+  required>
+
+</div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-warning"><a href="kategori_produk.php" style="color: black; text-decoration:none;">Kembali</a></button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button type="submit" class="btn btn-success" name="update">Update</button>
+                </div>
+              </form><!-- Vertical Form -->
             </div>
           </div>
-
         </div>
-
-        <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
     </section>
 
   </main><!-- End #main -->
@@ -194,7 +224,7 @@
       &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      Designed by <a href="#">DandyNobel</a>
+      Designed by <a href="#">DandyInventory</a>
     </div>
   </footer><!-- End Footer -->
 
