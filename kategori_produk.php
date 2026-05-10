@@ -157,22 +157,24 @@
           <li class="breadcrumb-item active">Kategori Produk</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
-
+     </div><!-- End Page Title -->
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
 
           <div class="card">
-            <div class="card-body">
+            <div class="card-body mt-3">
+              <a href="t_kat.php" class="btn btn-primary">Tambah Data</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
 
-  <h5 class="card-title">Data Kategori Produk</h5>
-
-  <a href="t_kat.php" class="btn btn-primary mb-3">
-    Tambah Data
-  </a>
-              <h5 class="card-title">Datatables</h5>
-
+      <div class="card">
+        <div class="card-body mt-3">
               <!-- Table with stripped rows -->
               <table class="table datatable">
                 <thead>
