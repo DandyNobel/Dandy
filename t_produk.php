@@ -1,5 +1,13 @@
 <?php
-include "koneksi.php";
+session_start();
+include 'koneksi.php';
+
+// cek apakah sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
+
 
 $auto = mysqli_query($conn, "select max(product_code) as max_code from products");
 $hasil = mysqli_fetch_array($auto);
@@ -122,8 +130,8 @@ if (isset($_POST['simpan'])) {
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : 'User'; ?></h6>
+              <span><?php echo isset($_SESSION['role']) ? $_SESSION['role'] : 'Role'; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -297,7 +305,7 @@ if (isset($_POST['simpan'])) {
             &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="#">DandyNobel</a>
+            Designed by <a href="https://www.instagram.com/nobelidandy/">DandyNobel</a>
         </div>
     </footer><!-- End Footer -->
 

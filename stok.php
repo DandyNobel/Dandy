@@ -98,7 +98,8 @@ if (isset($_POST['submit'])) {
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
         <li class="nav-item dropdown pe-3">
-
+          <h6><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : 'User'; ?></h6>
+          <span><?php echo isset($_SESSION['role']) ? $_SESSION['role'] : 'Role'; ?></span>
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
           </a><!-- End Profile Iamge Icon -->
@@ -273,7 +274,7 @@ if (isset($_POST['submit'])) {
       &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      Designed by <a href="https://www.instagram.com/mchrifkyadhiyoko/">RifkyAdhiyoko</a>
+      Designed by <a href="https://www.instagram.com/nobelidandy/">DandyInventory</a>
     </div>
   </footer><!-- End Footer -->
 

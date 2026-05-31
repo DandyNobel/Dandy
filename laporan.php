@@ -1,6 +1,12 @@
 <?php
+session_start();
 include 'koneksi.php';
 
+// cek apakah sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
 // total stok
 $q1 = mysqli_query($conn, "SELECT id FROM products");
 $total_item = $q1 ? mysqli_num_rows($q1) : 0;
@@ -72,8 +78,8 @@ $total_stok_kritis = $q4 ? mysqli_num_rows($q4) : 0;
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : 'User'; ?></h6>
+              <span><?php echo isset($_SESSION['role']) ? $_SESSION['role'] : 'Role'; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -242,7 +248,7 @@ $total_stok_kritis = $q4 ? mysqli_num_rows($q4) : 0;
       &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <a href="#">DandyNobel</a>
+      Designed by <a href="https://www.instagram.com/nobelidandy/">DandyNobel</a>
     </div>
   </footer><!-- End Footer -->
 

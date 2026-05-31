@@ -73,8 +73,8 @@ if (isset($_POST['update'])) {
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : 'User'; ?></h6>
+              <span><?php echo isset($_SESSION['role']) ? $_SESSION['role'] : 'Role'; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -224,7 +224,7 @@ if (isset($_POST['update'])) {
       &copy; Copyright <strong><span>DandyInventory</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      Designed by <a href="#">DandyInventory</a>
+      Designed by <a href="https://www.instagram.com/nobelidandy/">DandyNobel</a>
     </div>
   </footer><!-- End Footer -->
 
