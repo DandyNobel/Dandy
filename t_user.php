@@ -242,14 +242,16 @@ if (isset($_POST['simpan'])) {
 
     <div class="text-center">
         <button type="button" class="btn btn-warning">
-            <a href="user.php" style="color: black; text-decoration:none;">kembali</a>
-        </button>
+
         <button type="submit" name="simpan" class="btn btn-primary">
             Simpan
         <button type="reset" class="btn btn-secondary">
             Reset
         </button>
     </div>
+    <a href="users.php" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i> Kembali
+</a>
 
 </form>
                         </div>
