@@ -231,7 +231,7 @@ while($row = mysqli_fetch_array($query)) {
     </td>
 
     <td>
-        <a href="edit_produk.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">
+        <a href="e_produk.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">
             Edit
         </a>
 

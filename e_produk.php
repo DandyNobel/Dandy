@@ -1,5 +1,12 @@
 <?php
-include "koneksi.php";
+session_start();
+include 'koneksi.php';
+
+// cek apakah sudah login
+if (!isset($_SESSION['login'])) {
+    header('Location: login.php');
+    exit;
+}
 $id = $_GET['id'];
 $query = mysqli_query($conn, "SELECT * FROM products WHERE id = '$id'");
 $hasil = mysqli_fetch_array($query);
@@ -38,13 +45,17 @@ if (isset($_POST['update'])) {
     } else {
         //Tanpa ganti gambar 
         $update = mysqli_query($conn, "UPDATE products SET 
-            category_id = '$id_kategori',
-            product_name = '$nm_produk',
-            stock = '$stok',
-            min_stock = '$min_stok'
-            price = '$harga',
-            WHERE id = 'id'
-            ");
+    category_id = '$id_kategori',
+    product_name = '$nm_produk',
+    stock = '$stok',
+    min_stock = '$min_stok',
+    price = '$harga'
+WHERE id = '$id'
+");
+
+if (!$update) {
+    die("Error: " . mysqli_error($conn));
+}
     }
     if ($update) {
         echo "<script>alert('Data berhasil diubah!')</script>";
@@ -112,8 +123,8 @@ if (isset($_POST['update'])) {
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : 'User'; ?></h6>
+              <span><?php echo isset($_SESSION['role']) ? $_SESSION['role'] : 'Role'; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -231,7 +242,7 @@ if (isset($_POST['update'])) {
                             <form class="row g-3" method="POST" enctype="multipart/form-data">
                                 <div class="col-12">
                                     <label for="kd_produk" class="form-label">Kode Produk</label>
-                                    <input type="text" class="form-control" id="kd_produk" name="kd_produk" value="<?php echo $hasil['product_code']; ?>" readonly>
+                                    <input type="text" class="form-control" id="kd_produk" name="kd_produk" value="<?php echo $hasil['product_Code']; ?>" readonly>
                                 </div>
                                 <div class="col-12">
                                     <label for="nm_produk" class="form-label">Nama produk</label>
@@ -254,10 +265,15 @@ if (isset($_POST['update'])) {
                                     <select class="form-control" id="id_kategori" name="id_kategori" required>
                                         <?php
                                         $kategori = mysqli_query($conn, "SELECT * FROM categories");
-                                        while ($k = mysqli_fetch_array($kategori)) {
-                                            $selected = ($k['id'] == $hasil['category_id']) ? "selected" : "";
-                                            echo "<option value='{$k['id']}' $selected>{$k['category_name']}</option>";
-                                        }
+
+while ($k = mysqli_fetch_assoc($kategori)) {
+
+    $selected = ($k['category_id'] == $hasil['category_id']) ? "selected" : "";
+
+    echo "<option value='".$k['category_id']."' ".$selected.">"
+        .$k['nm_kat'].
+        "</option>";
+}
                                         ?>
                                     </select>
                                 </div>
@@ -290,7 +306,7 @@ if (isset($_POST['update'])) {
             &copy; Copyright <strong><span>Nama Sistem</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="#">DandyNobel</a>
+            Designed by <a href="https://www.instagram.com/nobelidandy/">DandyNobel</a>
         </div>
     </footer><!-- End Footer -->
 
