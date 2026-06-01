@@ -7,7 +7,9 @@ if (isset($_POST['update'])) {
 
     $nm_kat = $_POST['nm_kat'];
 
-    $query = mysqli_query($conn, "UPDATE categories SET category_name = '$nm_kat' WHERE id='$id'");
+    $query = mysqli_query($conn, "UPDATE categories 
+                              SET nm_kat='$nm_kat' 
+                              WHERE id='$id'");
     if ($query) {
         echo "<script>alert('Data berhasil diubah!')</script>";
         header("refresh:0, kategori_produk.php");

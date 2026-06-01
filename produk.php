@@ -202,9 +202,10 @@ if (!isset($_SESSION['login'])) {
                 <tbody>
                 <?php
 $query = mysqli_query($conn, "
-SELECT products.*, categories.nm_kat
-FROM products
-JOIN categories ON products.category_id = categories.category_id
+    SELECT products.*, categories.nm_kat 
+    FROM products 
+    INNER JOIN categories ON products.category_id = categories.category_id
+    ORDER BY products.product_code ASC
 ");
 
 $no = 1;
@@ -220,7 +221,7 @@ while($row = mysqli_fetch_array($query)) {
 
     <td><?php echo $row['product_name']; ?></td>
 
-    <td><?php echo $row['nm_kat']; ?></td>
+    <td><?php echo $row['nm_kat'] ?? '-'; ?></td>
 
     <td><?php echo $row['stock']; ?></td>
 

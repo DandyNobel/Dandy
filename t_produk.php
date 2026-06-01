@@ -22,20 +22,16 @@ $huruf = "P";
 $kd_produk = $huruf . sprintf("%03s", $urutan);
 if (isset($_POST['simpan'])) {
 
-    echo "Form terkirim <br>";
-
-    $nm_produk   = $_POST['nm_produk'];
+    $nm_produk   = mysqli_real_escape_string($conn, $_POST['nm_produk']);
     $stok        = $_POST['stok'];
     $min_stok    = $_POST['min_stok'];
     $harga       = $_POST['harga'];
     $id_kategori = $_POST['id_kategori'];
 
-    // Upload gambar
+
     $imgfile  = $_FILES['gambar']['name'];
     $tmp_file = $_FILES['gambar']['tmp_name'];
 
-    echo "Nama file : " . $imgfile . "<br>";
-    echo "Tmp file : " . $tmp_file . "<br>";
 
     $extension = strtolower(pathinfo($imgfile, PATHINFO_EXTENSION));
 
@@ -43,33 +39,38 @@ if (isset($_POST['simpan'])) {
 
     $allowed_extensions = array("jpg","jpeg","png","webp","jfif");
 
-    if(in_array($extension, $allowed_extensions)){
+    if (in_array($extension, $allowed_extensions)) {
 
         $imgnewfile = md5(time() . $imgfile) . "." . $extension;
 
-        if(move_uploaded_file($tmp_file, $dir . $imgnewfile)){
+        if (move_uploaded_file($tmp_file, $dir . $imgnewfile)) {
 
-            echo "Upload berhasil <br>";
-
-            $query = mysqli_query($conn,"
-            INSERT INTO products
-            (category_id, product_Code, Product_name, Stock, min_stock, price, gambar)
-            VALUES
-            ('$id_kategori','$kd_produk','$nm_produk','$stok','$min_stok','$harga','$imgnewfile')
+            $query = mysqli_query($conn, "
+                INSERT INTO products
+                (category_id, product_code, product_name, stock, min_stock, price, gambar)
+                VALUES
+                ('$id_kategori','$kd_produk','$nm_produk','$stok','$min_stok','$harga','$imgnewfile')
             ");
 
-            if($query){
-                echo "Data berhasil disimpan";
-            }else{
-                echo mysqli_error($conn);
+           if ($query) {
+    header("Location: produk.php");
+    exit;
+} else {
+                echo "<script>
+                        alert('Gagal menyimpan data: " . mysqli_error($conn) . "');
+                      </script>";
             }
 
-        }else{
-            echo "Upload gambar gagal";
+        } else {
+            echo "<script>
+                    alert('Upload gambar gagal');
+                  </script>";
         }
 
-    }else{
-        echo "Format file tidak didukung";
+    } else {
+        echo "<script>
+                alert('Format file tidak didukung! Gunakan JPG, JPEG, PNG, WEBP, atau JFIF');
+              </script>";
     }
 }
 ?>
